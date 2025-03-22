@@ -1,6 +1,5 @@
 const {log} = console;
-document.querySelector(".carrinho__produtos__produto").innerHTML = "";
-document.getElementById("valor-total").textContent = "R$ 0";
+limpar();
 
 function adicionar() {
     const selecaoDeProduto = document.getElementById("produto").value;
@@ -48,11 +47,6 @@ function adicionarProdutoNaLista(listaDeProduto, qtdaDoProduto, nomeDoProduto, v
 }
 
 function limpar() {
-    let listaDeProduto = document.querySelector(".carrinho__produtos__produto");
-    listaDeProduto.innerHTML = "";
-
-    let elementoTotal = document.getElementById("valor-total")
-    elementoTotal.innerHTML = `
-        <span class="texto-azul" id="valor-total">R$0</span>
-    `;
+    document.querySelector(".carrinho__produtos__produto").innerHTML = "";
+    document.getElementById("valor-total").textContent = "R$ 0";
 }
