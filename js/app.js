@@ -1,16 +1,16 @@
 const {log} = console;
+document.querySelector(".carrinho__produtos__produto").innerHTML = "";
+document.getElementById("valor-total").textContent = "R$ 0";
 
 function adicionar() {
     const selecaoDeProduto = document.getElementById("produto").value;
     const qtdaDoProduto = document.getElementById("quantidade").value;
     const listaDeProduto = document.querySelector(".carrinho__produtos__produto");
-    // log(listaDeProduto);
-    // log(qtdaDoProduto);
     let valorDoProduto = resgatarValorDoProdutoSelecionado(selecaoDeProduto);
     let nomeDoProduto = resgatarNomeDoProdutoSelecionado(selecaoDeProduto);
-    // log(nomeDoProduto);
+
     adicionarProdutoNaLista(listaDeProduto,qtdaDoProduto, nomeDoProduto, valorDoProduto);
-    // log(valorDoProduto);
+    document.getElementById("quantidade").value = 0;
 }
 
 function resgatarValorDoProdutoSelecionado(valor) {
@@ -35,10 +35,11 @@ function adicionarProdutoNaLista(listaDeProduto, qtdaDoProduto, nomeDoProduto, v
     let elementoTotal = document.getElementById("valor-total");
     let apresentaTotal = document.querySelector(".carrinho__total");
     let valorTotal = resgatarValorTotalDoProduto(elementoTotal.textContent);
-    log(valorTotal = valorTotal + (qtdaDoProduto * valorDoProduto));
+    let precoDoProduto = qtdaDoProduto * valorDoProduto;
+    valorTotal = valorTotal + precoDoProduto;
     listaDeProduto.innerHTML += `
         <br>
-        <span class="texto-azul">${qtdaDoProduto}x</span> ${nomeDoProduto} <span class="texto-azul">R$${valorDoProduto}</span>
+        <span class="texto-azul">${qtdaDoProduto}x</span> ${nomeDoProduto} <span class="texto-azul">R$${precoDoProduto}</span>
     `;
 
     apresentaTotal.innerHTML = `
