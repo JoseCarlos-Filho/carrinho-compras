@@ -7,8 +7,14 @@ function adicionar() {
     const listaDeProduto = document.querySelector(".carrinho__produtos__produto");
     let valorDoProduto = resgatarValorDoProdutoSelecionado(selecaoDeProduto);
     let nomeDoProduto = resgatarNomeDoProdutoSelecionado(selecaoDeProduto);
-
-    adicionarProdutoNaLista(listaDeProduto,qtdaDoProduto, nomeDoProduto, valorDoProduto);
+    
+    if (selecaoDeProduto === "" || qtdaDoProduto === "") {
+        alert("Selecione um produto e a quantidade");
+        return;
+    } else {
+        adicionarProdutoNaLista(listaDeProduto,qtdaDoProduto, nomeDoProduto, valorDoProduto);
+    }
+    
     document.getElementById("quantidade").value = 0;
 }
 
