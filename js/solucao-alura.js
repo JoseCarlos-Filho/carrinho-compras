@@ -5,11 +5,21 @@ limpar();
 function adicionar() {
     // recuperar valores nome do produto, quantidade e valor
     let produto = document.getElementById("produto").value;
-    let nomeProduto = produto.split('-')[0];
-    let valorUnitario = produto.split('R$')[1];
     let quantidade = document.getElementById("quantidade").value;
+
+    if(!produto || produto.trim() === '') {
+        alert("Selecione um produto válido.");
+        return;
+    }
+
+    if(isNaN(quantidade) || quantidade <= 0) {
+        alert("Insira uma quantidade válida>");
+        return;
+    }
     
     // calcular o preço, o nosso subtotal
+    let nomeProduto = produto.split('-')[0];
+    let valorUnitario = produto.split('R$')[1];
     let preco = quantidade * valorUnitario;
     
     //  adicionar no carrinho
