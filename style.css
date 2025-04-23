@@ -239,3 +239,114 @@ input[type="number"] {
 .adicionar-produto {
   padding-bottom: 180px;
 }
+
+/* Media Query para telas de até 468px */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 5vh 5vw 3vh; /* Reduz o padding do body */
+    font-size: 14px; /* Pode ajustar o tamanho da fonte base */
+    background: linear-gradient(to bottom,
+        #01080E 5%, /* Ajusta a posição do gradiente */
+        #FFF 5%,
+        #FFF 95%,
+        #01080E 95%);
+  }
+
+  .conteudo-principal {
+    padding: 3rem 1.5rem; /* Reduz o padding interno */
+    grid-template-columns: 1fr; /* Muda para layout de coluna única */
+    row-gap: 3rem; /* Adiciona espaço entre as seções do grid */
+    background: white; /* Remove a imagem de fundo ou ajusta */
+    filter: none; /* Remove a sombra se desejar */
+  }
+
+  .grafismo-azul {
+    display: none; /* Esconde o grafismo */
+  }
+
+  .titulo {
+    font-size: 3rem; /* Reduz o tamanho do título */
+    margin-bottom: 1.5rem;
+    text-align: center; /* Centraliza o título */
+  }
+
+  .texto-medio-azul {
+    font-size: 1.25rem; /* Ajusta o tamanho da fonte */
+  }
+
+  .formulario {
+    gap: 1rem; /* Ajusta o espaçamento */
+    align-items: center; /* Centraliza os itens do formulário */
+  }
+
+  .formulario .campo-grupo {
+    width: 100%; /* Faz os grupos ocuparem a largura total */
+    align-items: center; /* Centraliza itens dentro do grupo */
+  }
+
+  .produto-input {
+    width: 100%; /* Ocupa a largura total */
+    font-size: 1.1rem; /* Ajusta o tamanho da fonte */
+  }
+
+  .formulario > .parte-inferior {
+    flex-direction: column; /* Empilha os elementos */
+    align-items: center; /* Centraliza os elementos empilhados */
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .quantidade-input {
+    width: 100%; /* Ocupa a largura total */
+    font-size: 1.1rem; /* Ajusta o tamanho da fonte */
+    text-align: center;
+  }
+
+  .botoes-wrapper {
+    flex-direction: column; /* Empilha os botões */
+    width: 100%; /* Ocupa a largura total */
+    gap: 0.8rem;
+  }
+
+  .botao-form {
+    width: 100%; /* Botões ocupam a largura total */
+    font-size: 1.2rem; /* Ajusta o tamanho da fonte */
+  }
+
+  .carrinho {
+    width: 100%; /* Carrinho ocupa a largura total */
+    gap: 1.5rem;
+    align-items: center; /* Centraliza o conteúdo do carrinho */
+  }
+
+  .titulo-wrapper {
+    justify-content: center; /* Centraliza o título do carrinho */
+  }
+
+  .carrinho__titulo {
+    font-size: 1.25rem; /* Ajusta o tamanho da fonte */
+  }
+
+  .carrinho__produtos {
+    align-items: center; /* Centraliza os itens do produto */
+    width: 100%;
+  }
+
+  .carrinho__produtos__produto {
+    font-size: 1.1rem; /* Ajusta o tamanho da fonte */
+  }
+
+  .divisoria {
+    width: 100%; /* Divisória ocupa a largura total */
+  }
+
+  .carrinho__total {
+    font-size: 1.8rem; /* Ajusta o tamanho da fonte */
+    text-align: center;
+    width: 100%;
+  }
+
+  .adicionar-produto {
+    padding-bottom: 50px; /* Ajusta o padding inferior se necessário */
+  }
+}
